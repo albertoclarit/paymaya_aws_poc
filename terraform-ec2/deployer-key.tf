@@ -1,0 +1,5 @@
+resource "aws_key_pair" "deployer" {
+  key_name   = "aws_key"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7wQ12Xf04BL6qxyOQbfCIwe1+LAZxx84dtwk1RBUqDG1WcDW25fNBax3ch7SJ4xzZozykz70T71Tf216L6FlD7GfdgOqnHXSfJLsyfI6hTZzrsM5XDxLYx9JtJe4wDESRkL0/WXWeOvZTlC/2fu51IDMUakwPkXQJEq53dBFKZvuq0XlFD0tSH3JpEyZx4/nx1ciUAxpRsQ6Sm+3lCcLSFNDLBSr0lJP0mdY6gTq+nXzDrgygnMvp9wsBkCZCSkfsekEIAWDug4NRnmI30gx0/BQFG06XZAzP7fSjcou3kV6YZoymLhGszuyG1bKIBYt763AhMfM2SgD7E5UUulVT albert.oclarit@Alberts-MacBook-Pro.local"
+}
+

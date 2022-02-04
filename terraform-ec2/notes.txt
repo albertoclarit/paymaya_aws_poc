@@ -1,0 +1,23 @@
+==== Terraform ====
+https://learn.hashicorp.com/tutorials/terraform/install-cli
+
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
+
+terraform -help
+terraform -help plan
+
+terraform init
+
+terraform plan  [options] [plan file]
+terraform apply [options] [plan file]
+terraform destroy
+
+
+
+=== Guide to SSH to EC2 ====
+
+https://jhooq.com/terraform-ssh-into-aws-ec2/
+
+ssh-keygen -t rsa -b 2048 -f ./.ssh/aws
+

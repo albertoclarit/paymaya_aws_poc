@@ -1,0 +1,26 @@
+https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html
+AWS configuring with profiles ... so i can switch from personal to paymaya
+
+aws configure --profile personal
+
+ --- enter your accessid,accesskeys,region, output format
+
+aws configure import --csv file://albert_admin_common_accessKeys.csv
+
+aws s3 ls --profile personal
+aws ec2 describe-instances --profile personal
+aws ec2 describe-instances --profile personal
+
+for multiple commands you can set the profile permanently
+export AWS_PROFILE=personal
+
+change region
+aws configure set region ap-southeast-1 --profile personal
+
+aws configure list-profiles
+aws configure list [--profile profile-name]
+
+Note: Hongkong Region STS is not active by default
+https://aws.amazon.com/premiumsupport/knowledge-center/iam-validate-access-credentials/
+https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html#sts-regions-manage-tokens
+
