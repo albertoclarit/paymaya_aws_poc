@@ -51,6 +51,9 @@ resource "aws_instance" "web" {
            }
     }
 
+/* very bad practice....
+https://www.strongdm.com/blog/ssh-bastion-with-key
+
     provisioner "file" {
       source      = ".ssh/aws.pem"
       destination = "aws.pem"
@@ -63,7 +66,7 @@ resource "aws_instance" "web" {
                     timeout     = "4m"
                  }
     }
-
+*/
   tags = {
     Name = "HelloWorld"
   }
