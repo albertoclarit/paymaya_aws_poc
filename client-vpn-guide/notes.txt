@@ -1,0 +1,5 @@
+# Client VPN Endpoint is expensive than Bastion
+https://www.youtube.com/watch?v=uADf-JbN-ZE
+https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-endpoints.html#cvpn-working-endpoint-create
+https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-getting-started.html
+https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/client-authentication.html#mutual
