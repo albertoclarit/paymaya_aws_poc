@@ -1,0 +1,19 @@
+database from
+https://github.com/datacharmer/test_db
+https://aws.amazon.com/rds/previous-generation/
+
+ssh -i .ssh/aws.pem ubuntu@ec2-13-212-97-79.ap-southeast-1.compute.amazonaws.com
+
+mysql -h aurora-mysql.cluster-c2fcfc70wcec.ap-southeast-1.rds.amazonaws.com -u root -p
+
+
+ssh -i .ssh/aws.pem -f -N -L 13306:aurora-mysql.cluster-c2fcfc70wcec.ap-southeast-1.rds.amazonaws.com:3306 \
+ubuntu@ec2-13-212-97-79.ap-southeast-1.compute.amazonaws.com -v
+
+
+--- for ssh dont use in production ---
+-- pls check
+     select host, user from user;
+
+GRANT SELECT ON *.* TO root@'%';
+FLUSH PRIVILEGES;
