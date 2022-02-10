@@ -1,0 +1,26 @@
+https://learn.hashicorp.com/tutorials/terraform/eks
+https://docs.aws.amazon.com/eks/latest/userguide/fargate-getting-started.html
+
+-- update your kubeconfig
+aws eks --region ap-southeast-1  update-kubeconfig --name sample-eks-cIGTEUZH
+
+-- disable node-groups cause we will run our cluster to pure fargate
+
+=== Starting here manually create the Fargate Profile
+
+
+-- -updating coredns so pods will run pure fargate
+
+aws eks create-fargate-profile \
+    --region ap-southeast-1 \
+    --fargate-profile-name coredns \
+    --cluster-name sample-eks-cIGTEUZH \
+    --pod-execution-role-arn arn:aws:iam::752945841179:role/AmazonEKSFargatePodExecutionRole \
+    --selectors namespace=kube-system,labels={k8s-app=kube-dns} \
+    --subnets subnet-077b4915ec3bc08ec subnet-0018cb6995e29806e subnet-028f39e25d13ae345
+
+
+kubectl patch deployment coredns \
+    -n kube-system \
+    --type json \
+    -p='[{"op": "remove", "path": "/spec/template/metadata/annotations/eks.amazonaws.com~1compute-type"}]'
